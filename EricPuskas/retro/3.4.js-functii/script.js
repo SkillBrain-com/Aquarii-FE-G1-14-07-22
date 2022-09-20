@@ -5,7 +5,7 @@ console.log("Hello World");
  */
 const movies = [
   {
-    title: "Heathers",
+    title: "Heather",
     rating: 4.5,
     hasWatched: true
   },
