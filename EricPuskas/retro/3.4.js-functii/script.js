@@ -25,3 +25,44 @@ const movies = [
     hasWatched: true
   }
 ];
+
+const compareFn = (a, b) => {
+  console.log("a:", a);
+  console.log("b:", b);
+
+  if (a.rating > b.rating) return 1;
+  if (a.rating < b.rating) return -1;
+
+  return 0;
+};
+
+console.log({
+  original: movies,
+  sortat: [...movies].sort(compareFn)
+});
+
+// Math.random()
+// Date.now()
+
+const sum = (a, b) => {
+  // console.log({a , b})
+  return a + b;
+};
+
+sum(1, 4);
+
+const filtered = movies
+  .filter((movie) => movie.rating > 3)
+  .map((movie) => {
+    return {
+      ...movie,
+      title: "Not the right title"
+    };
+  });
+
+console.log(filtered);
+
+const everyMovieIsGood = movies.every((movie) => movie.rating === 5); // &&
+const someMoviesAreGood = movies.some((movie) => movie.rating === 5); // ||
+// const studentDoneHomework = students.every((student) => student.hasDoneHomework);
+console.log({ everyMovieIsGood, someMoviesAreGood });
