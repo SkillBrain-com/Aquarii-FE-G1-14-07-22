@@ -1,0 +1,16 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav-link.active,
+.nav-link.active:hover,
+.nav-link.active:focus {
+  background-color: #6060e7;
+  color: #fff;
+}
