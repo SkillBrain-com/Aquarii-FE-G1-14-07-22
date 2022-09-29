@@ -1,5 +1,3 @@
-console.log("Hello Worl!")
-
 /**
  * Tema-JS-Functii.3.4.5
  */
