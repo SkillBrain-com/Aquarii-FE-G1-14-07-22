@@ -1,0 +1,29 @@
+body {
+    margin-top: 100px;
+    text-align: center;
+    background-color: rgb(224, 145, 41);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+.timer-container {
+    font-size: 10rem;
+}
+
+.clock-icon {
+    width: 200px;
+}
+
+button {
+    margin: 0px 5px;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    padding: 1rem 3rem;
+}
+
+svg {
+    margin-bottom: 3px;
+}
