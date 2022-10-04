@@ -1,0 +1,59 @@
+body {
+    background-color: #d5c9c962;
+    color: #0077ff;
+}
+
+.app-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 60vh;
+}
+
+.money-input-container {
+    margin-bottom: 50px;
+}
+
+#range {
+    margin: 0px 10px;
+}
+
+h1 {
+    font-size: 7rem;
+    margin-bottom: 100px;
+    font-weight: 400;
+    color: #0077fffa;
+}
+
+h3 {
+    margin-top: 70px;
+    color: #0077ffab;
+    font-weight: 100;
+}
+
+.range-container {
+    display: flex;
+    min-width: 100vh;
+}
+
+#procentage {
+    font-size: 5rem;
+}
+
+.results-container {
+    margin-top: 20px;
+    width: 60%;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.results {
+    color: #0077ffab;
+    background-color: #ffffff62;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}
