@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator Bocanel Valerica</title>
+    <link rel="icon" type="image/png" href="skillbrain.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Inregistreaza-te!</h1>
+    <!-- Form -->
+    <form id="form">
+      <!-- Nume si Prenume -->
+      <div class="form-group">
+        <label for="name">Nume si Prenume</label>
+        <input type="text" id="name" name="name" 
+               placeholder="Nume Prenume" required minlength="3" maxlength="100" required>
+      </div>
+      <!-- Numar de telefon -->
+      <div class="form-group">
+        <label for="phone">Numar de telefon</label>
+        <input type="tel" id="phone" name="phone" placeholder="0741423456" required>
+      </div>
+      <!-- Adresa de Email -->
+      <div class="form-group">
+        <label for="email">Adresa de Email</label>
+        <input type="email" id="email" name="email" placeholder="email@address.com" required>
+      </div>
+      <!-- Website URL -->
+      <div class="form-group">
+        <label for="website">Website URL</label>
+        <input type="url" id="website" name="website" placeholder="http://jacinto.design" required>
+      </div>
+      <!-- Parola -->
+      <div class="form-group">
+        <label for="password1">Parola</label>
+        <input type="password" id="password1" placeholder="Creeaza parola (Min. 8 characters)" 
+               required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+               title="Va rugam sa introduce-ti cel putin o litera mica , o litera mare si o cifra .">
+      </div>
+      <!-- Confirm Password -->
+      <div class="form-group">
+        <label for="password2">Confirma Parola</label>
+        <input type="password" id="password2" placeholder="Confirma Parola"
+               required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" name="password">
+      </div>
+      <button type="submit">Inregistreaza</button>
+    </form>
+    <!-- Eroare/Mesaj cu succes ! -->
+    <div class="message-container">
+      <h3 id="message">Inca un pas !</h3>
+    </div>
+  </div>
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
