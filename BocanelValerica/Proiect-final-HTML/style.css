@@ -1,0 +1,43 @@
+#line {
+    background-color: #002db3;
+    padding: 4px;
+    border: 1px; 
+  }
+
+  #headers {
+    text-align: left;
+     padding: 30px; 
+     margin: 1px;  
+     border: 1px;
+
+  }
+
+  .informations {
+    margin:30px;
+  }
+
+  
+  .same {
+    color: #002db3;
+  }
+
+
+  #about-me {
+    padding: 30px; 
+     margin: 1px;  
+     border: 1px;
+  }
+
+
+  #my-objective {
+    text-align: left; 
+    padding: 10px;
+    margin: 1px;  
+    border: 1px;
+  }
+
+
+  .description-list {
+    font-size: 20px;
+  }
+
