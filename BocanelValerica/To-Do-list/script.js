@@ -25,7 +25,7 @@ delButton.addEventListener("click", () => {
 
   list.append(listItem);
 
-  imput.value = "";
+  input.value = "";
 
   console.log("Button clickend", input.value);
 };
