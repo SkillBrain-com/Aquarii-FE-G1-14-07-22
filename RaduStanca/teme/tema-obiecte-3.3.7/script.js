@@ -13,7 +13,7 @@ Output: { titlu: “Pizza”, portii: 3, ingrediente: [”sunca”, “cas”, �
  */
 
 
-const myFavoriteRecipe = (titlu, portii,ingrediente) => {
+const createRecipe = (titlu, portii,ingrediente) => {
     const myrecipe = {
        titlu,
        portii,
@@ -27,7 +27,7 @@ const myFavoriteRecipe = (titlu, portii,ingrediente) => {
     return myrecipe;
  };
  
- myFavoriteRecipe("pizza", 3, ["sunca", "cas", "ketchup"])
+ createRecipe("pizza", 3, ["sunca", "cas", "ketchup"])
  
  // ex.2-Scrieți o funcție care returnează un obiect nou fără proprietățile furnizate
  /**
@@ -37,7 +37,7 @@ const myFavoriteRecipe = (titlu, portii,ingrediente) => {
   */
  
  
-    const returnsOnObject = (object, property) => {
+    const deleteObjectProperty = (object, property) => {
        const clonedObject = {...object};
        console.log("Input:", object, property)
        delete clonedObject[property]
@@ -46,7 +46,7 @@ const myFavoriteRecipe = (titlu, portii,ingrediente) => {
      return clonedObject;
     }
  
-    returnsOnObject({ a: 1, b: 2 }, "b")
+    deleteObjectProperty({ a: 1, b: 2 }, "b")
  
  
      
