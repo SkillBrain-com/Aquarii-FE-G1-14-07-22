@@ -1,9 +1,9 @@
-const imput = document.getElementById("task-imput");
+const input = document.getElementById("task-input");
 const button = document.getElementById("task-button");
 
 const onButtonClick = () => {
   const list = document.querySelector(".tasks");
-  const task = document.createTextNode(imput.value);
+  const task = document.createTextNode(input.value);
   const listItem = document.createElement("li");
   const paragraph = document.createElement("p");
   const delButton = document.createElement("button");
@@ -27,7 +27,7 @@ delButton.addEventListener("click", () => {
 
   imput.value = "";
 
-  console.log("Button clickend", imput.value);
+  console.log("Button clickend", input.value);
 };
 
 button.addEventListener("click", onButtonClick);
