@@ -1,5 +1,5 @@
 /**
- * 1. Declara o clasa prin care sa reprezinți obiectul numit Mașina. O mașină are următoarele proprietăți:
+ * . Declara o clasa prin care sa reprezinți obiectul numit Mașina. O mașină are următoarele proprietăți:
         marca (ex: Volvo, Mazda, Dacia)
         model (ex: XC-60, CX-5, BIGGSTER)
         culoare (ex Negru, Verde, Albastru)
@@ -17,45 +17,39 @@
     Masina[marca=Dacia, model=BIGGSTER, culoare=Albastru, kilometraj=20 000]
 */
 
-console.log("test")
+console.log("test");
 
-    class Car {
-        constructor(brand, model, color, kilometres) {
-        this.brand = brand
-        this.model = model
-        this.color = color
-        this.kilometres = kilometres
-        }
+class Masina {
+  constructor(marca, model, culoare, kilometraj) {
+    this.marca = marca;
+    this.model = model;
+    this.culoare = culoare;
+    this.kilometraj = kilometraj;
+  }
 
-      getProperties() {
-        return {
-            brand: this.brand,
-            model: this.model,
-            color: this.color,
-            kilometres: this.kilometres
+  getProps() {
+    return `Masina[marca=${this.marca}, model=${this.model}, culoare=${this.culoare}, kilometraj=${this.kilometraj}]`;
+  }
+}
 
-        }
-      }
-    }
+function main() {
+  Masina1 = new Masina("VOLVO", "XC-60", "Negru", "234.000");
+  Masina2 = new Masina("Mazda", "CX-5", "Verde", "111 000");
+  Masina3 = new Masina("Dacia", "BIGGSTER", "Albastru", "20 000");
 
-    function main () {
-        const myCar1 = new Car('VOLVO', 'XC-60', 'black', '234.000')
-        const myCar2 = new Car('Mazda', 'CX-5', 'green', '111.000' )
-        const myCar3 = new Car('Dacia', 'BIGGSTER', 'blue', '20.000')
-        console.log(myCar1.getProperties()) // {brand:"VOLVO", model: "XC-60",color: "black", kilometres: "234.000"}
-        console.log(myCar2.getProperties()) // {brand: "Mazda", model: "CX-5", color: "green", kilometres: "111.000"}
-        console.log(myCar3.getProperties()) // {brand: "Dacia", model: "BIGGSTER", color: "blue", kilometres: "20.000"}
-    }
+  console.log(Masina1.getProps());
+  console.log(Masina2.getProps());
+  console.log(Masina3.getProps());
+}
 
 main();
-
 
 /**
  *  2. Definește încă o clasa numita MasinaDeCurse. Această clasă va moșteni clasa Masina definita la exercițiul 1, folosind cuvantul cheie extends si va avea un constructor in care se va apela super() (adica superconstructorul).
 
    MasinaDeCurse va avea o metoda suplimentara numita participaLaCampionat, metoda ce va primi un parametru numit pozitiaInCampionat (un numar). Metoda va afisa “Am castigat locul ” urmat de valoarea parametrului pozitiaInCampionat. Metoda va verifica daca pozitiaInCampionat este un numar mai mare ca 0, iar in cazul in care numarul este mai mic sau egal cu 0, se va afisa mesajul “Nu am castigat niciun premiu”.
-Ex:
-const m1 = new MasinaDeCurse("Toyota", "Turbo", "Rosu", 100000);
+
+   const m1 = new MasinaDeCurse("Toyota", "Turbo", "Rosu", 100000);
 m1.participaLaCampionat(30);
 //Va afisa mesajul: Am castigat locul 30
 
@@ -65,24 +59,25 @@ m1.participaLaCampionat(-1);
 La final defineste o functie in care sa instantiezi doua masini de curse, prima va paricipa la campionat si va castiga locul 2, iar a doua nu va participa la campionat(folosind metoda definita). De asemenea afiseaza proprietatiile masinilor ca si la exercitiul
  */
 
-class MasinaDeCurse extends Car {
-    constructor(brand, model, color, kilometres, position) {
-        super(brand, model, color, kilometres) 
-            this.position = position
-    }
+class MasinaDeCurse extends Masina {
+  constructor(marca, model, culoare, kilometraj) {
+    super(marca, model, culoare, kilometraj);
+  }
 
-    setRacer(position) {
-        this.position = position
-       
-        if( position === 0 || position < 0){
-            console.log('Nu am castigat niciun premiu')
-        }else {
-            console.log(`Am castigat locul ${position}`)
-        }
+  participaLaCampionat(pozitiaInCampionat) {
+    if (pozitiaInCampionat <= 0) {
+      console.log("Nu am castigat nici un premiu");
+    } else {
+      console.log(`Am castigat locul ${pozitiaInCampionat}`);
     }
-
+  }
 }
 
-const m1 = new MasinaDeCurse("Toyota", "Turbo", "Rosu", 100000);
-m1.setRacer(30);  // Am castigat locul 30
-m1.setRacer(-1);  // Nu am castigat niciun premiu
+const cursa = () => {
+  const m1 = new MasinaDeCurse("Toyota", "Turbo", "Rosu", 100000);
+
+  m1.participaLaCampionat(1);
+  m1.participaLaCampionat(-1);
+};
+
+cursa();
