@@ -1,0 +1,53 @@
+body {
+    text-align: center;
+    background: linear-gradient(0.25turn,#e66465, #d6e591);
+}
+
+h1 {
+    font-size: 8rem;
+    color: aliceblue;
+    font-family: 'Nabla', cursive;
+    text-shadow: 0.5px 0.5px 4px rgb(87, 10, 10);
+}
+
+.game-container {
+    margin: 50px auto auto auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    max-width: 50rem;
+    flex-wrap: wrap;
+}
+
+.game-tab {
+    font-size: 11rem;
+    color: #44321a;
+    width: 15rem;
+    height: 15rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0.5px 0.5px 3px rgb(83, 76, 11);
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.playerSelect-container {
+    font-size: 2rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+
+#startMessage {
+    text-shadow: 1px 1px 2px rgb(70, 39, 4);
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: #fff;
+}
+
+#firstPlayer {
+    margin: 10px 0;
+    max-width: 10rem;
+}
