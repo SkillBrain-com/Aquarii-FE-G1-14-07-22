@@ -1,0 +1,19 @@
+{
+  "name": "demo",
+  "version": "2.1.4",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "cowthink node.js is cool"
+  },
+  "author": "Eric Puskas",
+  "license": "ISC",
+  "dependencies": {
+    "cowsay": "^1.5.0"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
