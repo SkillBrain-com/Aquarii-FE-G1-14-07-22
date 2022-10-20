@@ -8,7 +8,7 @@ let users = [
 // find
 // getUserById(2)
 
-const getUserById = (users, id) => {
+const getUserById = (id) => {
   const result = users.find((user) => user.id === id);
   console.log(result);
   return result;
@@ -25,8 +25,8 @@ getDevelopers();
 // map
 // addGreetingToUsers(users);  const someUser = getUserById(1);  someUser.greet(); // Hello, my name is Mike
 
-const addGreetingToUsers = (users) => {
-  users = users.map((user) => {
+const addGreetingToUsers = (_users) => {
+  users = _users.map((user) => {
     const greet = () => {
       console.log(`Hello, my name is ${user.name}`);
     };
@@ -38,8 +38,8 @@ const addGreetingToUsers = (users) => {
   });
 };
 
-const updatedUsers = addGreetingToUsers(users);
-const someUser = getUserById(updatedUsers, 1);
+addGreetingToUsers(users);
+const someUser = getUserById(1);
 
 someUser.greet();
 
