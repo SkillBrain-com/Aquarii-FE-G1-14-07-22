@@ -9,7 +9,6 @@ console.log(findSquare(0));
 console.log(findSquare(-12));
 
 
-
 /*
 2. Scrieți o funcție pentru a genera un număr aleatoriu mai mare sau egal cu o variabilă start și strict mai mic decât o variabilă end.
 Aceste două variabile sunt capetele intervalului pentru numărul general: [start, end)
@@ -29,7 +28,6 @@ randomResults(3,5,5);
 
 
 
-
 // 3. Scrieți o funcție pentru a găsi numărul de apariții al unei litere într-un șir
 
 const letterCount = (string, letter) => {
@@ -41,7 +39,6 @@ const letterCount = (string, letter) => {
 console.log("\nProblema 3\n----------");
 console.log(letterCount("Îmi place programarea","a"));
 console.log(letterCount("Vreau să lucrez în IT","r"));
-
 
 
 
