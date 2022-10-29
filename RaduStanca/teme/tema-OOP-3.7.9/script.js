@@ -1,4 +1,4 @@
-console.log("Salut sunt Radu si aceasta este tema Js OOP")
+
 
 /**
  * Exercitiul 1.
