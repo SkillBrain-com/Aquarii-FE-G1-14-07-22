@@ -38,7 +38,7 @@ const TODOS_MOCK = [
 function App() {
   const [todosList, setTodosList] = useState(TODOS_MOCK);
   const [isOpen, setIsOpen] = useState(false);
-  const [editTodos, setEditTodos] = useState("");
+  const [editTodo, setEditTodo] = useState();
 
   const openModal = () => {
     setIsOpen(true);
@@ -61,35 +61,33 @@ function App() {
     closeModal();
   };
 
-  const updateTodoList = (arr, obj) => {
-    arr.forEach((item) => {
-      if (item.id === obj.id) {
-        item.title = obj.title;
-        item.description = obj.description;
-        item.completed = obj.completed;
+  const updateTodoInList = (prevState, updatedTodo) => {
+    return prevState.map((todo) => {
+      if (todo.id === updatedTodo.id) {
+        return updatedTodo;
+      } else {
+        return todo;
       }
     });
-  };
+  } 
 
   const onChangeCompleted = (completedTodo) => {
-    updateTodoList(todosList, completedTodo);
-    setTodosList([...todosList]);
+    setTodosList((prevState) => updateTodoInList(prevState, completedTodo));
   };
 
   const onDeleteTodo = (id) => {
-    setTodosList([...todosList.filter((item) => item.id != id)]);
+    setTodosList(todosList.filter((item) => item.id !== id));
   };
 
   const onEditTodo = (editTodo) => {
-    setEditTodos(editTodo);
+    setEditTodo(editTodo);
     openModal();
   };
 
   const onUpdateTodoCompleted = (updateTodo) => {
-    updateTodoList(todosList, updateTodo);
-    setTodosList([...todosList]);
+    setTodosList((prevState) => updateTodoInList(prevState, updateTodo));
     closeModal();
-    setEditTodos("");
+    setEditTodo();
   };
 
 
@@ -122,7 +120,6 @@ function App() {
           <div className="list-container">
             {todosList
               .filter((item) => item.completed === true)
-              .reverse()
               .map((item) => (
                 <TodoItem
                   key={item.id}
@@ -139,16 +136,16 @@ function App() {
         </Card>
 
         <Modal isOpen={isOpen} onClose={closeModal}>
-          return (
-          {!editTodos ? (
+          
+          {!editTodo ? (
             <CreateTodoForm addNewTodo={onAddNewTodo} id={maxId(todosList)} />
           ) : (
             <EditTodoForm
-              editTodo={editTodos}
+              editTodo={editTodo}
               updateTodo={onUpdateTodoCompleted}
             />
           )}
-          )
+          
         </Modal>
       </div>
     </div>
