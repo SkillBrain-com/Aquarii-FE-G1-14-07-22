@@ -1,0 +1,52 @@
+body {
+    background-color: #fffbe6;
+}
+
+.nav {
+    font-size: 1.5rem;
+    background-color: white;
+    --bs-nav-link-color: rgb(219, 159, 159);
+}
+
+#waifu-pic {
+    height: 75vh;
+    width: auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.waifu-container {
+    text-align: center;
+    margin: auto;
+}
+
+#waifu-pic {
+    border-radius: 10px;
+}
+
+.quote-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    list-style: none;
+    color: rgb(219, 159, 159);
+}
+
+.quote-container li {
+    margin: 10px;
+    max-width: 80vh;
+    text-align: center;
+}
+
+#quote-character,
+#quote-anime,
+#quote-quote {
+    color: rgba(0, 0, 0, 0.692);
+}

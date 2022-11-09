@@ -1,0 +1,39 @@
+body {
+    background-position-x: 50%;
+    background-position-y: -20%;
+    background-color: #45badd;
+    background-image: url(robot.gif);
+    background-repeat: no-repeat;
+}
+
+#button {
+    font-size: 1.5rem;
+    padding: 10px;
+    max-width: 300px;
+    background-color: #ff3482;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 10px rgb(114, 113, 113);
+}
+
+#button:hover {
+    background-color: #b8225b;
+}
+
+.speech-container {
+    margin-top: 10%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    max-width: 20%;
+}
+
+#speech {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #3087a1;
+    padding: 10px;
+    border-radius: 10px;
+}
