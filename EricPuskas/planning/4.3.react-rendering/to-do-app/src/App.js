@@ -4,29 +4,17 @@ import axios from "axios";
 import { Modal } from "./components/Modal";
 import { TodoListViewer } from "./components/TodoListViewer";
 import { TodoForm } from "./components/TodoForm";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import { useModal } from "./hooks";
 
 function App() {
-  const [createModalOpen, setCreateModalOpen] = useState(false);
-  const [editModalOpen, setEditModalOpen] = useState(false);
+  const [createModalOpen, handleOpenCreateModal, handleCloseCreateModal] =
+    useModal();
+
+  const [editModalOpen, handleOpenEditModal, handleCloseEditModal] = useModal();
 
   const [todos, setTodos] = useState([]);
   const [todo, setTodo] = useState();
-
-  const handleOpenCreateModal = () => {
-    setCreateModalOpen(true);
-  };
-
-  const handleCloseCreateModal = () => {
-    setCreateModalOpen(false);
-  };
-
-  const handleOpenEditModal = () => {
-    setEditModalOpen(true);
-  };
-
-  const handleCloseEditModal = () => {
-    setEditModalOpen(false);
-  };
 
   const addTodo = (todoListItem) => {
     setTodos((prevState) => {
@@ -113,12 +101,15 @@ function App() {
     <div className="App">
       <h1> To do App</h1>
       <button onClick={handleOpenCreateModal}> Add todo </button>
-      <TodoListViewer
-        todos={todos}
-        toggleTodoComplete={toggleTodoComplete}
-        handleDelete={handleDelete}
-        handleEdit={handleEdit}
-      />
+
+      <ErrorBoundary>
+        <TodoListViewer
+          todos={todos}
+          toggleTodoComplete={toggleTodoComplete}
+          handleDelete={handleDelete}
+          handleEdit={handleEdit}
+        />
+      </ErrorBoundary>
 
       <Modal open={createModalOpen} onClose={handleCloseCreateModal}>
         <TodoForm
