@@ -1,18 +1,17 @@
-import React from "react";
+import React from 'react';
 import { useState, useEffect } from "react";
 import ColorSquare from "./components/color-square/ColorSquare";
-import "./App.css";
+import './App.css';
+
 
 const DEFAULT_SQUARES = 6;
-var winningcolor = "";
-var msg = "";
 
 function App() {
-  const [newList, setNewList] = useState(true);
   const [colorsList, setColorsList] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedColor, setSelectedColor] = useState();
-
+  const [winningColor, setWinningColor] = useState("");
+  const [msg, setMsg] = useState("");
+  
   const createRandomColor = () => {
     let red = Math.floor(Math.random() * 256);
     let green = Math.floor(Math.random() * 256);
@@ -21,9 +20,9 @@ function App() {
     return `rgb(${red}, ${green}, ${blue})`;
   };
 
-  const getWinningColor = () => {
-    const randomIndex = Math.floor(Math.random() * colorsList.length);
-    return colorsList[randomIndex];
+  const getWinningColor = (list) => {
+    const randomIndex = Math.floor(Math.random() * list.length);
+    return list[randomIndex];
   };
 
   const createColorList = (numberOfSquares) => {
@@ -35,33 +34,24 @@ function App() {
     return colors;
   };
 
-  const handleChangeColors = () => {
-    newColors();
-  };
-
   const newColors = () => {
     setIsOpen(false);
-    setColorsList(createColorList(DEFAULT_SQUARES));
-    winningcolor = getWinningColor();
-    setSelectedColor();
+    startColorsList();
   };
 
   const handleColorPick = (color) => {
-    console.log(color);
     setIsOpen(true);
-    setSelectedColor(color);
     onColorPick(color);
   };
 
   const onColorPick = (color) => {
-    if (color !== winningcolor) {
+    if (color !== winningColor) {
       setColorsList((prevState) => updateColorList(prevState, color));
-      msg = "Try again!";
+      setMsg("Try again!");
     } else {
-      msg = "You won!";
+      setMsg("You won!");
     }
   }
-
 
   const updateColorList = (prevState, color) => {
     return prevState.map((item) => {
@@ -73,28 +63,23 @@ function App() {
     });
   } 
 
-
-  if (isOpen === false) {
-    const color = getWinningColor();
-    winningcolor = color;
+  const startColorsList = () => {
+    const startList = createColorList(DEFAULT_SQUARES);
+    setColorsList(startList);
+    setWinningColor(getWinningColor(startList).toString());
   }
 
-
   useEffect(() => {
-    const list = createColorList(DEFAULT_SQUARES);
-    setColorsList(list);
-    setNewList(false);
+    startColorsList(); 
   }, [])
 
-
+  
   return (
     <div className="App">
       <div className="app-container">
-        <h1>The great {winningcolor} guessing game</h1>
-        <button onClick={handleChangeColors}>New colors</button>
-
+        <h1>The great {winningColor} guessing game</h1>
+        <button onClick={newColors}>New colors</button>
         <div className={`${isOpen ? "msg-contents" : "msg-hidden"}`}>{msg}</div>
-
         <div className="squares">
           {colorsList.map((item, index) => (
             <ColorSquare

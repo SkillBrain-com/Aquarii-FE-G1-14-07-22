@@ -1,7 +1,7 @@
 import "./ColorSquare.css";
 
 const ColorSquare = (props) => {
-    return <div className="square" onClick={props.onClick} Style={`background-color: ${props.color};`}></div>;
+    return <div className="square" onClick={props.onClick} style={{backgroundColor: props.color}}></div>;
 }
 
 export default ColorSquare;
