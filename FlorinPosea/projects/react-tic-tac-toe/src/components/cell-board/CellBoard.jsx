@@ -5,11 +5,10 @@ const CellBoard = (props) => {
   
   return (
     <div
-      className={props.cls}
+      className={`${props.cls} ${props.empty ? "" : "filled"}`}
       onClick={props.onClick}
       onMouseEnter={props.onMouseEnter}
       onMouseLeave={props.onMouseLeave}
-      style={{color: props.isHovering ? "lightgrey" : "black"}}
     ></div>
   );
 };

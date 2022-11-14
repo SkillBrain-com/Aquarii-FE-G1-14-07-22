@@ -156,7 +156,7 @@ function App() {
             key={cell.id}
             id={cell.id}
             cls={cell.cls}
-            color={cell.color}
+            empty={cell.empty}
             onClick={() => placeMark(cell)}
             onMouseEnter={() => handleMouseEnter(cell)}
             onMouseLeave={() => handleMouseLeave(cell)}
