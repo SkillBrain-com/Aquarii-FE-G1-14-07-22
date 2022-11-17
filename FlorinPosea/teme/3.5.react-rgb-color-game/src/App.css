@@ -1,0 +1,26 @@
+.App {
+  text-align: left;
+  padding: 20px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.squares {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #222020;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg-hidden {
+  display: none;
+}
+
+.msg-display {
+  display: contents;
+}
