@@ -2,7 +2,7 @@ import "./Cell.css";
 import { useTicTacToe } from "../../hooks";
 import ClearIcon from "@mui/icons-material/Clear";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
-import Paper from "@mui/material/Paper";
+import { StyledCell } from "./Cell.style";
 
 export const Cell = (props) => {
   const { id } = props;
@@ -16,8 +16,12 @@ export const Cell = (props) => {
   };
 
   return (
-    <Paper component="td" onClick={() => handleClick(id)}>
+    <StyledCell
+      elevation={5}
+      sx={{ width: 100, height: 100 }}
+      onClick={() => handleClick(id)}
+    >
       {renderCellValue()}
-    </Paper>
+    </StyledCell>
   );
 };

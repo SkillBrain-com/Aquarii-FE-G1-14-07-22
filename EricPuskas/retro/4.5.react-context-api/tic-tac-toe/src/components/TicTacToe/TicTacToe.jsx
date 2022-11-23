@@ -29,11 +29,15 @@ export const TicTacToe = () => {
       const { cells: _cells, rowId } = row;
 
       return (
-        <tr key={rowId}>
+        <Grid key={rowId} item container xs={12} spacing={1}>
           {_cells.map((cell) => {
-            return <Cell id={cell} />;
+            return (
+              <Grid item xs={4}>
+                <Cell id={cell} />
+              </Grid>
+            );
           })}
-        </tr>
+        </Grid>
       );
     });
   };
@@ -54,12 +58,17 @@ export const TicTacToe = () => {
       <div>Turn: {turn}</div>
       {winner && <div>Winner is {winner}!</div>}
       {isDraw && <div>Draw!</div>}
-      <table>
-        <tbody>{renderCells()}</tbody>
-      </table>
-      {/* <Grid direction="row" container>
-        {renderCells()}
-      </Grid> */}
+
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        sx={{ mt: 5, mb: 5 }} // margin top and margin bottom
+      >
+        <Grid container sx={{ maxWidth: 300 }} spacing={0.25}>
+          {renderCells()}
+        </Grid>
+      </Grid>
       <MessageModal open={isModalOpen} onClose={closeModal} message={message} />
       <BootstrapButton greenBg onClick={resetGame}>
         Reset Game
